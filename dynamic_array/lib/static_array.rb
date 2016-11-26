@@ -16,16 +16,12 @@ class StaticArray
     @store[index] = value
   end
 
-  def length
-    @store.length
-  end
-
   protected
   attr_accessor :store
 
   private
 
   def validate!(ind)
-    raise "Overflow error" unless ind.between?(0, length - 1)
+    raise "Overflow error" unless ind.between?(0, @store.length - 1)
   end
 end
