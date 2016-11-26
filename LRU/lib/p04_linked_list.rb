@@ -59,12 +59,7 @@ class LinkedList
       end
     end
 
-    new_link = Link.new(key, val)
-    @tail.prev.next = new_link
-    new_link.prev = @tail.prev
-    new_link.next = @tail
-    @tail.prev = new_link
-    new_link
+    append(key, val)
   end
 
 
@@ -79,6 +74,17 @@ class LinkedList
       end
     end
     nil
+  end
+
+  def append(key, val)
+    new_link = Link.new(key, val)
+
+    @tail.prev.next = new_link
+    new_link.prev = @tail.prev
+    new_link.next = @tail
+    @tail.prev = new_link
+
+    new_link
   end
 
   def each(&prc)
