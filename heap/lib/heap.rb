@@ -1,5 +1,6 @@
 class BinaryMinHeap
   def initialize(&prc)
+    @store = []
   end
 
   def count
